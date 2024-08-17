@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  radicale-subs:
+    image: ghcr.io/malmeloo/radicale-calendar-subs:latest
+    container_name: radicale-subs
+    volumes:
+      - ./config:/config
+    environment:
+      - RADICALE_URL=https://your-radicale-server
+      - RADICALE_PASS_username=user-pass-here
+    restart: unless-stopped
